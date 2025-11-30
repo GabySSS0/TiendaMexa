@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Productos de limpieza - Tienda Mexa</title>
+
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .card-img-top {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<!-- 🔵 HEADER SUPERIOR -->
+<header class="py-2 px-3 d-flex align-items-center justify-content-between" style="background:#d7e6ff;">
+
+  <!-- LOGO -->
+  <div class="d-flex align-items-center">
+    <img src="logo.jpg" alt="Logo" width="50" height="50" class="me-2">
+    <div class="text-center">
+      <h4 class="m-0 fw-bold">Tienda Mexa</h4>
+      <small class="text-primary">Lo que necesitas, siempre contigo</small>
+    </div>
+  </div>
+
+  <!-- ENLACES DE NAVEGACIÓN -->
+  <div class="d-flex align-items-center gap-4">
+
+    <!-- Inicio de sesión -->
+    <a href="login.html" class="text-primary fw-semibold">Inicio de sesión</a>
+
+    <!-- Botón Inicio -->
+    <a href="index.html" class="text-primary fw-semibold">Inicio</a>
+
+    <!-- Buscador -->
+    <input type="text" placeholder="Buscar productos..." class="form-control-sm rounded-pill px-3">
+    <button class="btn btn-outline-secondary btn-sm">Buscar</button>
+
+    <!-- Carrito -->
+    <button class="btn btn-outline-secondary btn-sm">🛒</button>
+  </div>
+
+</header>
+
+<body style="background-color:#ffffff;">
+
+<div class="container my-4">
+
+  <h2>Productos de limpieza</h2>
+
+  <div class="row g-3" id="productsList">
+
+    <!-- Axion -->
+    <div class="col-6 col-md-4">
+      <div class="card product-item p-2" 
+           data-id="lim-axion" 
+           data-name="Axion Limón 400g" 
+           data-price="28.00">
+
+        <img src="ace.jpg" class="card-img-top" alt="Axion Limón 400g">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">Axion Limón 400g</h6>
+          <p class="card-text small">$28.00</p>
+
+          <div class="d-flex justify-content-center gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+            <div class="quantity">0</div>
+            <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+
+            <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pinol -->
+    <div class="col-6 col-md-4">
+      <div class="card product-item p-2"
+           data-id="lim-pinol"
+           data-name="Pinol 1L"
+           data-price="35.00">
+
+        <img src="pinol.jpg" class="card-img-top" alt="Pinol 1L">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">Pinol 1L</h6>
+          <p class="card-text small">$35.00</p>
+
+          <div class="d-flex justify-content-center gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+            <div class="quantity">0</div>
+            <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+
+            <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ensueño -->
+    <div class="col-6 col-md-4">
+      <div class="card product-item p-2"
+           data-id="lim-ensueno"
+           data-name="Ensueño 800ml"
+           data-price="40.00">
+
+        <img src="suavitel.jpg" class="card-img-top" alt="Ensueño 800ml">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">Ensueño 800ml</h6>
+          <p class="card-text small">$40.00</p>
+
+          <div class="d-flex justify-content-center gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+            <div class="quantity">0</div>
+
+            <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+            <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloro -->
+    <div class="col-6 col-md-4">
+      <div class="card product-item p-2"
+           data-id="lim-cloro"
+           data-name="Cloro 1L"
+           data-price="22.00">
+
+        <img src="cloro.jpg" class="card-img-top" alt="Cloro 1L">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">Cloro 1L</h6>
+          <p class="card-text small">$22.00</p>
+
+          <div class="d-flex justify-content-center gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+
+            <div class="quantity">0</div>
+            <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+
+            <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jabón líquido -->
+    <div class="col-6 col-md-4">
+      <div class="card product-item p-2"
+           data-id="lim-jabon"
+           data-name="Jabón líquido 750ml"
+           data-price="30.00">
+
+        <img src="zote.jpg" class="card-img-top" alt="Jabón líquido 750ml">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">Zote</h6>
+          <p class="card-text small">$30.00</p>
+
+          <div class="d-flex justify-content-center gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+
+            <div class="quantity">0</div>
+            <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+
+            <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Escoba -->
+    <div class="col-6 col-md-4">
+      <div class="card product-item p-2"
+           data-id="lim-escoba"
+           data-name="Escoba doméstica"
+           data-price="45.00">
+
+        <img src="escobas.png" class="card-img-top" alt="Escoba doméstica">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">Escoba doméstica</h6>
+          <p class="card-text small">$45.00</p>
+
+          <div class="d-flex justify-content-center gap-2 align-items-center">
+            <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+
+            <div class="quantity">0</div>
+            <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+
+            <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<script src="assets/js/cart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

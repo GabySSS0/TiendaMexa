@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frituras - Tienda Mexa</title>
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+</style>
+
+</head>
+
+<header class="py-2 px-3 d-flex align-items-center justify-content-between" style="background:#d7e6ff;">
+      
+      <!-- LOGO -->
+      <div class="d-flex align-items-center">
+        <img src="logo.jpg" alt="Logo" width="50" height="50" class="me-2">
+        <div class="text-center">
+          <h4 class="m-0 fw-bold">Tienda Mexa</h4>
+          <small class="text-primary">Lo que necesitas, siempre contigo</small>
+        </div>
+      </div>
+
+      <!-- ENLACES -->
+      <div class="d-flex align-items-center gap-4">
+
+        <a href="login.html" class="text-primary fw-semibold">Inicio de sesión</a>
+
+        <a href="index.html" class="text-primary fw-semibold">Inicio</a>
+
+        <input type="text" placeholder="Buscar productos..." class="form-control-sm rounded-pill px-3">
+        <button class="btn btn-outline-secondary btn-sm">Buscar</button>
+
+        <button class="btn btn-outline-secondary btn-sm">🛒</button>
+
+      </div>
+  </header>
+
+<body style="background-color:#ffffff;">
+
+  <div class="container my-4">
+    
+    <h2>Frituras</h2>
+    <div class="row g-3" id="productsList">
+
+  <!-- Barcel -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-barcel" data-name="Papas Barcel Original" data-price="18.00">
+      <img src="papasbarcel.jpg" class="card-img-top" alt="Papas Barcel">
+      <div class="card-body text-center">
+        <h6 class="card-title">Papas Barcel Original</h6>
+        <p class="card-text small">$18.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Takis -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-takis" data-name="Takis Fuego" data-price="16.00">
+      <img src="takis.jpg" class="card-img-top" alt="Takis Fuego">
+      <div class="card-body text-center">
+        <h6 class="card-title">Takis Fuego</h6>
+        <p class="card-text small">$16.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cacahuates -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-cacahuates" data-name="Cacahuates Japoneses" data-price="20.00">
+      <img src="cacahuates.jpg" class="card-img-top" alt="Cacahuates Japoneses">
+      <div class="card-body text-center">
+        <h6 class="card-title">Cacahuates Japoneses</h6>
+        <p class="card-text small">$20.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chips -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-chips" data-name="Chips Sal" data-price="15.00">
+      <img src="chips.jpg" class="card-img-top" alt="Chips Sal">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chips Sal</h6>
+        <p class="card-text small">$15.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Big Mix -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-bigmix" data-name="Big Mix Clasico" data-price="17.00">
+      <img src="bigmix.jpg" class="card-img-top" alt="Big Mix Clasico">
+      <div class="card-body text-center">
+        <h6 class="card-title">Big Mix Clásico</h6>
+        <p class="card-text small">$17.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Doritos -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-doritos" data-name="Doritos Nacho" data-price="18.00">
+      <img src="doritos.jpg" class="card-img-top" alt="Doritos Nacho">
+      <div class="card-body text-center">
+        <h6 class="card-title">Doritos Nacho</h6>
+        <p class="card-text small">$18.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ruffles -->
+  <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="fri-ruffles" data-name="Ruffles Original" data-price="19.00">
+      <img src="ruffles.jpg" class="card-img-top" alt="Ruffles Original">
+      <div class="card-body text-center">
+        <h6 class="card-title">Ruffles Original</h6>
+        <p class="card-text small">$19.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

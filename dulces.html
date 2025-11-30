@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dulces - Tienda Mexa</title>
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 🔵 MISMO ESTILO PARA LAS IMÁGENES -->
+ <style>
+    .card-img-top {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<!-- 🔵 HEADER IGUAL AL DE GALLETAS -->
+<header class="py-2 px-3 d-flex align-items-center justify-content-between" style="background:#d7e6ff;">
+      
+  <!-- LOGO -->
+  <div class="d-flex align-items-center">
+    <img src="logo.jpg" alt="Logo" width="50" height="50" class="me-2">
+    <div class="text-center">
+      <h4 class="m-0 fw-bold">Tienda Mexa</h4>
+      <small class="text-primary">Lo que necesitas, siempre contigo</small>
+    </div>
+  </div>
+
+  <!-- ENLACES DE NAVEGACIÓN -->
+  <div class="d-flex align-items-center gap-4">
+
+    <a href="login.html" class="text-primary fw-semibold">Inicio de sesión</a>
+
+    <a href="index.html" class="text-primary fw-semibold">Inicio</a>
+
+    <input type="text" placeholder="Buscar productos..." class="form-control-sm rounded-pill px-3">
+
+    <button class="btn btn-outline-secondary btn-sm">Buscar</button>
+
+    <button class="btn btn-outline-secondary btn-sm">
+      🛒
+    </button>
+
+  </div>
+</header>
+
+<body style="background-color:#ffffff;">
+
+  <div class="container my-4">
+    
+    <h2>Dulces</h2>
+    <div class="row g-3" id="productsList">
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="Mamut" data-name="Mamut" data-price="10.00">
+          <img src="mamut.jpg" class="card-img-top" alt="Mini Mamut">
+          <div class="card-body text-center">
+            <h6 class="card-title">Mamut</h6>
+            <p class="card-text small">$1.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="Mazapan1" data-name="Mazapan" data-price="15.00">
+          <img src="mazapan.jpg" class="card-img-top" alt="Mazapan">
+          <div class="card-body text-center">
+            <h6 class="card-title">Mazapan</h6>
+            <p class="card-text small">$5.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="dul-choc" data-name="Hershey 40g" data-price="18.00">
+          <img src="pulparindo.jpg"card-img-top" alt="pulparindo">
+          <div class="card-body text-center">
+            <h6 class="card-title">Pulparindo</h6>
+            <p class="card-text small">$7.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="dul-snack" data-name="Snack salado 50g" data-price="12.00">
+          <img src="pelon.jpg" class="card-img-top" alt="PELON">
+          <div class="card-body text-center">
+            <h6 class="card-title">PELON</h6>
+            <p class="card-text small">$12.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="dul-gomitas" data-name="Gomitas 100g" data-price="20.00">
+          <img src="carlos v.jpg" class="card-img-top" alt="carlos">
+          <div class="card-body text-center">
+            <h6 class="card-title">Carlos kg</h6>
+            <p class="card-text small">$20.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="dul-paleta" data-name="Paleta de caramelo" data-price="6.00">
+          <img src="rokaleta.jpg" class="card-img-top" alt="Paleta de caramelo">
+          <div class="card-body text-center">
+            <h6 class="card-title">Rokaleta</h6>
+            <p class="card-text small">$6.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

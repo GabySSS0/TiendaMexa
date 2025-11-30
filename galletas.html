@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galletas - Tienda Mexa</title>
+  <link href="assets/css/styles.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- 🔵 MISMO ESTILO PARA LAS IMÁGENES -->
+  <style>
+    .card-img-top {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<!-- 🔵 HEADER IGUAL AL DE VERDURAS -->
+<header class="py-2 px-3 d-flex align-items-center justify-content-between" style="background:#d7e6ff;">
+      
+  <!-- LOGO -->
+  <div class="d-flex align-items-center">
+    <img src="logo.jpg" alt="Logo" width="50" height="50" class="me-2">
+    <div class="text-center">
+      <h4 class="m-0 fw-bold">Tienda Mexa</h4>
+      <small class="text-primary">Lo que necesitas, siempre contigo</small>
+    </div>
+  </div>
+
+  <!-- ENLACES DE NAVEGACIÓN -->
+  <div class="d-flex align-items-center gap-4">
+
+    <a href="login.html" class="text-primary fw-semibold">Inicio de sesión</a>
+
+    <a href="index.html" class="text-primary fw-semibold">Inicio</a>
+
+    <input type="text" placeholder="Buscar productos..." class="form-control-sm rounded-pill px-3">
+
+    <button class="btn btn-outline-secondary btn-sm">Buscar</button>
+
+    <button class="btn btn-outline-secondary btn-sm">
+      🛒
+    </button>
+
+  </div>
+</header>
+
+<body style="background-color:#ffffff;">
+
+  <div class="container my-4">
+    
+    <h2>Galletas</h2>
+    <div class="row g-3" id="productsList">
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="gal-oreo" data-name="Oreo 113g" data-price="20.00">
+          <img src="oreo.jpg" class="card-img-top" alt="Oreo 113g">
+          <div class="card-body text-center">
+            <h6 class="card-title">Oreo 113g</h6>
+            <p class="card-text small">$20.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="gal-emperador" data-name="Emperador 125g" data-price="18.00">
+          <img src="emperador.jpg" class="card-img-top" alt="Emperador 125g">
+          <div class="card-body text-center">
+            <h6 class="card-title">Emperador 125g</h6>
+            <p class="card-text small">$18.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="gal-chips" data-name="Chips Ahoy 130g" data-price="22.00">
+          <img src="chokis.jpg" class="card-img-top" alt="Chips Ahoy 130g">
+          <div class="card-body text-center">
+            <h6 class="card-title">Chips Ahoy 130g</h6>
+            <p class="card-text small">$22.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="gal-marias" data-name="Marías 200g" data-price="12.00">
+          <img src="maria.jpg" class="card-img-top" alt="Marías 200g">
+          <div class="card-body text-center">
+            <h6 class="card-title">Marías 200g</h6>
+            <p class="card-text small">$12.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="gal-double" data-name="Oreo Double 140g" data-price="25.00">
+          <img src="oreo.jpg" class="card-img-top" alt="Oreo Double 140g">
+          <div class="card-body text-center">
+            <h6 class="card-title">Oreo Double 140g</h6>
+            <p class="card-text small">$25.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <div class="card product-item p-2" data-id="gal-salteadas" data-name="Galletas Saladas g" data-price="10.00">
+          <img src="saladitas.png" class="card-img-top" alt="Galletas Saladas 100g">
+          <div class="card-body text-center">
+            <h6 class="card-title">Galletas Saladas 100g</h6>
+            <p class="card-text small">$10.00</p>
+            <div class="d-flex justify-content-center gap-2 align-items-center">
+              <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+              <div class="quantity">0</div>
+              <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+              <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tienda Mexa</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --azul-rey: #0033A0;   /* títulos */
+      --azul-maya: #73C2FB;  /* texto / secundarios */
+      --fondo-header: #d9e7ff;
+  
+  --dorado: #DAA520;   /* NUEVO COLOR */
+  --dorado-oscuro: #8B6914; /* Hover */
+    }
+
+    body{
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--azul-maya);
+      background: #fff;
+    }
+
+    /* HEADER */
+    .topbar {
+      background: var(--fondo-header);
+      border-bottom: 2px solid rgba(0,0,0,0.06);
+    }
+    .brand-title {
+      
+      color: var(--dorado);
+      font-weight: 800;
+      font-size: 2.8rem;
+      letter-spacing: 0.5px;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 
+        0 0 10px #e8c56c,
+        0 0 15px #e8c56c,
+        0 0 20px #e8c56c,
+        0 0 40px #d4a73c;
+    }
+    .search-input {
+      background: #fff;
+      border-radius: 20px;
+    }
+    .btn-primary-custom {
+      background: var(--dorado);
+      border-color: var(--dorado);
+      color: #fff;
+    }
+
+    /* Site map dropdown styling */
+    .sitemap-list a {
+      color: var(--azul-rey);
+      text-decoration: none;
+    }
+
+    /* Slogan area */
+    .slogan-box{
+      background: linear-gradient(90deg, rgba(115,194,251,0.12), rgba(0,51,160,0.03));
+      border-radius: 12px;
+      padding: 2.0rem;
+    }
+    .slogan-title{
+      color: var(--azul-rey);
+      font-size: 2rem;
+      font-weight: 700;
+    }
+    .slogan-sub{
+      color: var(--azul-maya);
+      font-size: 1.05rem;
+    }
+
+    /* Assistant chat */
+    .assistant {
+      background: #fff;
+      border: 1px solid rgba(0,51,160,0.12);
+      border-radius: 10px;
+      padding: 1rem;
+      max-width: 320px;
+      min-width: 220px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    .assistant .messages {
+      height: 140px;
+      overflow-y: auto;
+      background: linear-gradient(#fff,#f8fbff);
+      padding: 0.5rem;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+    }
+    .assistant .msg-user { text-align:right; font-weight:600; color: var(--azul-rey); }
+    .assistant .msg-bot { text-align:left; color:#333; }
+
+    /* "Quiénes somos" */
+    .who-section h2{ color: var(--azul-rey); }
+    .who-section h5{ color: var(--azul-maya); }
+
+    /* Footer */
+    footer {
+      background: #f8fbff;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      color: var(--azul-maya);
+    }
+    footer h5 { color: var(--azul-rey); }
+
+    /* Product cards */
+    .product-card { border: 1px solid rgba(0,0,0,0.06); border-radius: 10px; padding: 0.7rem; background: #fff; }
+    .product-card img { max-height: 110px; object-fit: contain; }
+
+    @media (max-width: 767px){
+      .brand-title { font-size: 1.1rem; text-align:center; }
+      .header-center { order: 3; width: 100%; margin-top: 0.5rem; }
+      .header-left, .header-right { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="topbar">
+    <div class="container py-2">
+      <div class="d-flex align-items-center">
+        <!-- Logo left -->
+        <div class="header-left d-flex align-items-center">
+          <a href="#" class="me-3">
+            <!-- Placeholder logo -->
+             <a href="logo.jpg">
+  <img id="logoImg" src="logo.jpg" alt="Logo" style="height:80px;">
+</a>
+            
+        </div>
+
+        <!-- Title center -->
+        <div class="flex-fill text-center header-center">
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+          <div class="brand-title">Tienda Mexa</div>
+        </div>
+
+        <!-- Buttons right -->
+        <div class="header-right d-flex align-items-center gap-2">
+         <a href="inicioS.html" 
+   style="color: var(--dorado); text-decoration: underline; font-weight: 600; cursor: pointer;">
+   Inicio de sesión
+</a>
+
+
+      
+  <!-- Icono de lupa dentro del input -->
+<form id="searchForm" class="d-flex align-items-center" onsubmit="return false;">
+  <input id="searchInput"
+         class="form-control search-input form-control-sm me-0"
+         type="search"
+         placeholder="Buscar productos..."
+         aria-label="Buscar"
+         style="width:180px;">
+
+  <button id="searchBtn"
+          type="button"
+          style="
+          color: var(--dorado); text-decoration: underline; font-weight: 600; cursor: pointer;
+            background:none;
+            border:none;
+            font-size:18px;
+            cursor:pointer;
+            color:#d4af37; /* DORADO */
+          ">
+      🔍
+  </button>
+</form>
+
+
+          <!-- Cart -->
+          <a href="compras.html"
+   style="color: var(--dorado); text-decoration: underline; font-size:1.1rem; cursor:pointer;">
+   🛒 
+</a>
+
+
+          <!-- Site map dropdown -->
+          <div class="dropdown">
+  <a class="dropdown-toggle"
+     id="sitemapBtn"
+     data-bs-toggle="dropdown"
+     aria-expanded="false"
+     style="color: var(--dorado); text-decoration: underline; font-weight:600; cursor:pointer;">
+     Mapa del sitio
+  </a>
+            <ul class="dropdown-menu dropdown-menu-end p-3 sitemap-list" aria-labelledby="sitemapBtn" style="min-width:220px;">
+              <li><a class="dropdown-item" href="#videoWelcome">Video de bienvenida</a></li>
+              <li><a class="dropdown-item" href="#productos">Carrusel de productos</a></li>
+              <li><a class="dropdown-item" href="#slogan">Slogan & Asistente</a></li>
+              <li><a class="dropdown-item" href="#¿Quienes-somos?">¿Quiénes somos?</a></li>
+              <li><a class="dropdown-item" href="#localizacion">Localización</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#footer">Derechos reservados</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="container my-4">
+
+    <!-- VIDEO DE BIENVENIDA -->
+   <section id="videoWelcome" class="mb-5">
+    <h3 class="titulo-brillante">Bienvenidos</h3>
+
+    <div class="ratio ratio-16x9">
+        <!-- tu video aquí -->
+         <!-- Replace src with your YouTube embed or local mp4 -->
+        <iframe src="Bienvenidoss.mp4" title="Video de bienvenida" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    </div>
+</section>
+
+<style>
+.titulo-brillante {
+    color: var(--dorado);        /* tu color dorado */
+    text-align: center;          /* centrado */
+      /* opcional para que se vea más elegante */
+
+    /* Efecto brillante */
+   
+}
+</style>
+
+
+        
+
+    <!-- CARRUSEL + PRODUCTOS -->
+    <section id="productos" class="mb-5">
+      <h3 style="color:var(--dorado); text-align: center; ">Productos</h3>
+
+      <!-- Bootstrap carousel with sample slides -->
+      <div id="productCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <!-- Each "card" is a product -->
+              <div class="product-card text-center" style="width:150px; ">
+                <img src="refrescos.jpg" alt="Refrescos">
+                <div   class="mt-2">Refrescos</div>
+                <a href="refrescos.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+
+              <div class="product-card text-center" style="width:150px;">
+                <img src="frituras.jpg" alt="Fituras">
+                <div class="mt-2">Frituras</div>
+                <a href="frituras.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+
+              <div class="product-card text-center" style="width:150px;">
+                <img src="verduras.jpg" alt="verduras">
+                <div class="mt-2">verduras</div>
+                <a href="Verduras.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+
+             
+              <div class="product-card text-center" style="width:150px;">
+                <img src="lacteos.jpg" alt="lacteos">
+                <div class="mt-2">Lacteos</div>
+                <a href="lacteos.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+              <div class="product-card text-center" style="width:150px;">
+                <img src="embutidos.jpg" alt="embutidos">
+                <div class="mt-2">embutidos</div>
+                <a href="embutidos.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+              <div class="product-card text-center" style="width:150px;">
+                <img src="galletas.png" alt="Galletas">
+                <div class="mt-2">Pan dulce</div>
+                <a href="galletas.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+              <div class="product-card text-center" style="width:150px;">
+                <img src="dulces.jpg" alt="dulces">
+                <div class="mt-2"> dulces</div>
+                <a href="dulces.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+              <div class="product-card text-center" style="width:150px;">
+                <img src="limpieza.jpg" alt="Productos de limpieza">
+                <div class="mt-2">limpieza</div>
+                <a href="limpieza.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+  <span class="carousel-arrow">&#10094;</span>  <!-- Flecha izquierda -->
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+  <span class="carousel-arrow">&#10095;</span>  <!-- Flecha derecha -->
+</button>
+
+<style>
+.carousel-arrow {
+    font-size: 40px;
+    color: var(--dorado);      /* tu color dorado */
+    font-weight: bold;
+}
+
+/* Ocultar el fondo que pone Bootstrap */
+.carousel-control-prev,
+.carousel-control-next {
+    background: none !important;
+    border: none !important;
+    width: 5%;                 /* que no ocupe mucho espacio */
+}
+
+/* Quitar el icono por defecto */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none;
+}
+</style>
+
+      </div>
+
+      <!-- GRID de productos (filtrable con búsqueda) -->
+      <div class="mb-3">
+        <small class="text-muted">Resultados de búsqueda (si no se usa la búsqueda aparecerán todos):</small>
+      </div>
+
+      <div id="productGrid" class="row g-3">
+        <!-- Repeat product cards, ensure each has data-name attribute for filtering -->
+
+        <div class="col-6 col-md-3">
+          <div class="product-card h-100" data-name="Leche Entera">
+            <img src="https://via.placeholder.com/220x120?text=Leche" class="w-100" alt="Leche">
+            <h6 class="mt-2">Leche Entera</h6>
+            <p class="mb-1 small">1L</p>
+            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="product-card h-100" data-name="Galletas Choco">
+            <img src="https://via.placeholder.com/220x120?text=Galletas" class="w-100" alt="Galletas">
+            <h6 class="mt-2">Galletas Choco</h6>
+            <p class="mb-1 small">Paquete</p>
+            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="product-card h-100" data-name="Refresco Cola">
+            <img src="https://via.placeholder.com/220x120?text=Refresco" class="w-100" alt="Refresco">
+            <h6 class="mt-2">Refresco Cola</h6>
+            <p class="mb-1 small">600 ml</p>
+            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="product-card h-100" data-name="Jabón en barra">
+            <img src="https://via.placeholder.com/220x120?text=Jabon" class="w-100" alt="Jabon">
+            <h6 class="mt-2">Jabón en barra</h6>
+            <p class="mb-1 small">Pack 3</p>
+            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
+          </div>
+        </div>
+
+        <!-- más productos -->
+        <div class="col-6 col-md-3">
+          <div class="product-card h-100" data-name="Pasta dental">
+            <img src="https://via.placeholder.com/220x120?text=Pasta" class="w-100" alt="Pasta">
+            <h6 class="mt-2">Pasta dental</h6>
+            <p class="mb-1 small">90 g</p>
+            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="product-card h-100" data-name="Detergente">
+            <img src="https://via.placeholder.com/220x120?text=Detergente" class="w-100" alt="Detergente">
+            <h6 class="mt-2">Detergente</h6>
+            <p class="mb-1 small">1 kg</p>
+            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SLOGAN + ASSISTANT -->
+    <section id="slogan" class="mb-5">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <div class="slogan-box">
+            <div class="slogan-title">Lo que buscas siempre contigo</div>
+            <div class="slogan-sub mt-2">El mejor surtido y atención cerca de ti. Encuentra todo lo que necesitas en un solo lugar.</div>
+            <p class="mt-3">Promociones, productos frescos y envíos rápidos. Visita nuestras secciones para descubrir más.</p>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex justify-content-end mt-3 mt-md-0">
+          <!-- Assistant virtual -->
+          <div class="assistant" id="assistant">
+            <div style="font-weight:700; color:var(--azul-rey); margin-bottom:0.5rem;">Asistente Virtual</div>
+            <div class="messages" id="assistantMessages">
+              <div class="msg-bot">Hola 👋, ¿en qué puedo ayudarte hoy?</div>
+            </div>
+            <div class="input-group">
+              <input id="assistantInput" class="form-control form-control-sm" placeholder="Escribe tu pregunta...">
+              <button id="assistantSend" class="btn btn-sm btn-primary-custom">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIÉNES SOMOS -->
+    <section id="quienes-somos" class="who-section mb-5">
+      <h2>¿Quiénes somos?</h2>
+      <h5>Tienda Mexa</h5>
+      <div class="row align-items-center mt-3">
+        <div class="col-md-7">
+          <textarea id="whoText" class="form-control" rows="8"
+            placeholder="Escribe aquí un texto largo sobre tu tienda (mision, vision, historia, servicios...).">
+Somos una tienda de abarrotes donde le vamos a ofrecer un servicio de calidad. 
+Nuestro nombres es “Tienda Mexa” porque como somos un comercio Mexicano queremos mostrar nuestras raices al igual que los colores  que es el azul maya un color que viene de México y sacar de lo convencional.
+Y mostrar lo tradicional de lo que es una tiendita de la esquina..</textarea>
+        </div>
+        <div class="col-md-5 text-center">
+          <!-- Logo grande -->
+          <img id="bigLogo" src="logo.jpg" alt="Logo grande" class="img-fluid rounded">
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <!-- Localización -->
+        <div id="localizacion" class="col-md-6 mb-3">
+          <h5>Localización</h5>
+          <p>Dirección: Ecatepec. Estado de Mexico. Calle Guayaba</p>
+
+          <!-- Mapa iframe: reemplaza la src por la ubicación real si deseas -->
+          <div class="ratio ratio-16x9 mb-2">
+            <iframe
+              src="https://maps.app.goo.gl/sTAGxrTBb96QfLGK6"
+              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+
+          <div>
+            <small>Fecha de creación  11/11/2020/ actualización 12/11/2025: <span id="fechaCreacion"></span></small>
+          </div>
+        </div>
+
+        <!-- Derechos reservados centered -->
+        <div class="col-md-6 d-flex flex-column justify-content-between">
+          <div class="text-center my-auto">
+            <h5 style="color:var(--azul-rey)">Tienda Mexa</h5>
+            <p class="mb-0">Todos los derechos reservados &copy; <span id="yearNow"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap & JS dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // ===== Fecha dinámica en footer =====
+    (function(){
+      const d = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      document.getElementById('fechaCreacion').textContent = d.toLocaleDateString('es-MX', options);
+      document.getElementById('yearNow').textContent = d.getFullYear();
+    })();
+
+    // ===== Búsqueda de productos (filtra productGrid por data-name) =====
+    function normalize(s){ return s ? s.trim().toLowerCase() : ''; }
+    function filterProducts(term){
+      term = normalize(term);
+      const cards = document.querySelectorAll('#productGrid > .col-');
+      // Actually select all product-card containers in grid:
+      const containers = document.querySelectorAll('#productGrid > div');
+      let anyVisible = false;
+      containers.forEach(c => {
+        const card = c.querySelector('[data-name]');
+        if(!card) return;
+        const name = normalize(card.getAttribute('data-name'));
+        if(term === '' || name.indexOf(term) !== -1){
+          c.style.display = '';
+          anyVisible = true;
+        } else {
+          c.style.display = 'none';
+        }
+      });
+      // If nothing matches, show a notice
+      if(!anyVisible){
+        // show a small message
+        if(!document.getElementById('noResults')){
+          const el = document.createElement('div');
+          el.id = 'noResults';
+          el.className = 'alert alert-warning mt-3';
+          el.textContent = 'No se encontraron productos que coincidan.';
+          document.getElementById('productGrid').parentNode.appendChild(el);
+        }
+      } else {
+        const nr = document.getElementById('noResults');
+        if(nr) nr.remove();
+      }
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', () => {
+      const val = document.getElementById('searchInput').value;
+      filterProducts(val);
+    });
+    document.getElementById('searchInput').addEventListener('keyup', (e) => {
+      if(e.key === 'Enter') { filterProducts(e.target.value); }
+      else if(e.target.value === '') filterProducts(''); // reset when empty
+    });
+
+    // ===== Assistant: simple echo bot (placeholder) =====
+    const assistantSend = document.getElementById('assistantSend');
+    const assistantInput = document.getElementById('assistantInput');
+    const assistantMessages = document.getElementById('assistantMessages');
+
+    function appendMessage(text, cls){
+      const div = document.createElement('div');
+      div.className = cls === 'user' ? 'msg-user' : 'msg-bot';
+      div.textContent = text;
+      assistantMessages.appendChild(div);
+      assistantMessages.scrollTop = assistantMessages.scrollHeight;
+    }
+
+    assistantSend.addEventListener('click', () => {
+      const text = assistantInput.value.trim();
+      if(!text) return;
+      appendMessage(text, 'user');
+      assistantInput.value = '';
+      // Simple simulated response
+      setTimeout(() => {
+        appendMessage('Gracias por tu mensaje. Pronto te atenderemos. (Respuesta automática)', 'bot');
+      }, 700);
+    });
+
+    assistantInput.addEventListener('keydown', (e) => {
+      if(e.key === 'Enter'){ assistantSend.click(); e.preventDefault(); }
+    });
+
+    // ===== Make product card buttons link-ready (placeholder links) =====
+    // All buttons that will lead to other pages currently have href="#" - When you add the pages,
+    // replace those href="#" with the real urls.
+    // If you prefer they link to "producto.html" or "login.html" now, just search/replace.
+
+  </script>
+</body>
+</html>

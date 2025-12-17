@@ -6,8 +6,72 @@
   <title>Tienda Mexa - Productos</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
+    :root{
+  --azul-rey: #0033A0;
+  --azul-maya: #73C2FB;
+  --fondo-header: #d9e7ff;
+  --dorado: #DAA520;
+  --dorado-oscuro: #8B6914;
+}
+.btn-dorado {
+    background: var(--dorado);
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+}
+.btn-dorado:hover {
+    background: var(--dorado-oscuro);
+    color: white;
+}
+
+.brand-title{
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: var(--dorado);
+  line-height: 1;
+  margin: 0;
+}
+
+.mobile-title{
+  font-family: 'Great Vibes', cursive;
+  color: var(--dorado);
+  line-height: 1;
+}
+ 
+.brand-title{
+  font-weight: 400;
+}
+
+/* Hace que el botón quede pegado abajo */
+.footer-fixed {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+}
+.brand-title {
+      
+      color: var(--dorado);
+      font-weight: 800;
+      font-size: 2.8rem;
+      letter-spacing: 0.5px;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 
+        0 0 10px #e8c56c,
+        0 0 15px #e8c56c,
+        0 0 20px #e8c56c,
+        0 0 40px #d4a73c;
+}
+
+.topbar {
+  background: var(--fondo-header);
+  border-bottom: 2px solid rgba(0,0,0,0.08);
+}
+
+    
     /* Imagenes de productos */
     .card-img-top {
       width: 100%;
@@ -25,7 +89,7 @@
       padding: 6px 18px;
     }
     .cart-btn:hover {
-      background: #003cbd;
+      background: #31af20;
       color: white;
     }
   </style>
@@ -33,47 +97,140 @@
 
 <body style="background-color:#ffffff;">
 
-<!-- ======================= HEADER ======================= -->
-<header class="py-2 px-3 d-flex align-items-center justify-content-between" style="background:#d7e6ff;">
+<!-- ======================= HEADER ESCRITORIO ======================= -->
+<header class="topbar d-none d-md-block">
+  <div class="container py-2">
+    <div class="d-flex align-items-center justify-content-between">
 
-  <!-- LOGO -->
-  <div class="d-flex align-items-center">
-      <img src="logo.jpg" alt="Logo" width="50" height="50" class="me-2">
-      <div class="text-center">
-          <h4 class="m-0 fw-bold">Tienda Mexa</h4>
-          <small class="text-primary">Lo que necesitas, siempre contigo</small>
+      <!-- Logo -->
+      <a href="index.html" class="d-flex align-items-center">
+        <img id="logoImg" src="logo.jpg" alt="Logo" style="height:80px;">
+      </a>
+
+      <!-- Título -->
+      <div class="text-center flex-fill">
+        <div class="brand-title">Tienda Mexa</div>
       </div>
+
+      <!-- Acciones -->
+      <div class="d-flex align-items-center gap-3">
+
+        <a href="inicioS.html"
+          style="color:var(--dorado); text-decoration:underline; font-weight:700;">
+          Inicio de sesión
+        </a>
+
+        <a href="index.html"
+          style="color:var(--dorado); text-decoration:underline; font-weight:700;">
+          Inicio
+        </a>
+
+        <!-- Buscador -->
+        <form class="d-flex align-items-center">
+          <input class="form-control form-control-sm"
+            type="search" placeholder="Buscar..."
+            style="width:180px;">
+          <button type="button"
+            style="background:none;border:none;font-size:18px;color:var(--dorado);">
+            🔍
+          </button>
+        </form>
+
+        <!-- Carrito -->
+        <button class="btn position-relative fw-bold"
+          style="background:var(--dorado); color:white; border-radius:50px;"
+          data-bs-toggle="offcanvas" data-bs-target="#carritoCanvas">
+          🛒
+          <span class="position-absolute top-0 start-100 translate-middle badge bg-danger">
+            0
+          </span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="offcanvas offcanvas-start offcanvas-half" tabindex="-1" id="menuMovil">
+
+  <div class="offcanvas-header">
+    <h5 class="mobile-title" style="color: var(--dorado);">Tienda Mexa</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
 
-  <!-- MENÚ + CARRITO -->
-  <div class="d-flex align-items-center gap-4">
+  <div class="offcanvas-body">
 
-      <a href="login.html" class="text-primary fw-semibold">Inicio de sesión</a>
+    <a href="inicioS.html" class="d-block mb-3"
+       style="color: var(--dorado); font-weight:700; font-size:1.1rem;">
+       👤 Iniciar sesión
+    </a>
 
-      <a href="index.html" class="text-primary fw-semibold">Inicio</a>
+    <a href="compras.html" class="d-block mb-3"
+       style="color: var(--dorado); font-weight:700; font-size:1.1rem;">
+       🛒 Carrito
+    </a>
 
-      <input type="text" placeholder="Buscar productos..." class="form-control-sm rounded-pill px-3">
+    <a href="index.html" class="d-block mb-3"
+       style="color: var(--dorado); font-weight:700; font-size:1.1rem;">
+        INICIO
+    </a>
 
-      <button class="btn btn-outline-secondary btn-sm">Buscar</button>
+  </div>
+</div>
 
-      <!-- BOTÓN DEL CARRITO -->
-      <button class="cart-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#carritoCanvas">
-        🛒 Carrito
-        <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          0
-        </span>
-      </button>
+<!-- ======================= HEADER MÓVIL ======================= -->
+<header class="d-md-none py-2 px-2" style="background:#d7e6ff;">
+  <div class="d-flex align-items-center justify-content-between">
+
+    <button class="btn" data-bs-toggle="offcanvas" data-bs-target="#menuMovil"
+      style="font-size:1.8rem;">☰</button>
+
+    <img src="logo.jpg" alt="Logo" style="height:55px;">
+
+     <span class="mobile-title"
+          style="font-size:1.3rem; color:var(--dorado); font-weight:700;">
+      Tienda Mexa
+    </span>
+
+    <button class="btn position-relative fw-bold"
+      style="background:var(--dorado); color:white; border-radius:50px;"
+      data-bs-toggle="offcanvas" data-bs-target="#carritoCanvas">
+      🛒
+      <span class="position-absolute top-0 start-100 translate-middle badge bg-danger">
+        0
+      </span>
+    </button>
 
   </div>
 </header>
 
+<!-- =============== FIN HEADER MÓVIL =============== -->
+
+<div class="d-md-none px-2 mt-2 d-flex">
+  <input class="form-control me-2" type="search" placeholder="Buscar productos...">
+  <button class="btn" style="color:var(--dorado); font-size:1.5rem;">🔍</button>
+</div>
+
+
+
+
+
 
 
 <!-- ======================= CONTENIDO ======================= -->
+<style>
+.titulo-brillante {
+    color: var(--dorado);       
+    text-align: center;         
+    font-weight: 800;           
+}
+</style>
+
 <div class="container my-4">
-  <h2>Productos</h2>
+  <h2 class="titulo-brillante">Productos</h2>
 
   <div class="row g-3" id="productsList">
+
 
       <!-- ‼️ AQUI PEGAS TUS TARJETAS DE PRODUCTOS COMO SIEMPRE -->
       <!-- ejemplo:
@@ -95,22 +252,26 @@
 
 
 <!-- ======================= PANEL DEL CARRITO ======================= -->
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="carritoCanvas">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title">🛒 Tu carrito</h5>
     <button class="btn-close" data-bs-dismiss="offcanvas"></button>
   </div>
 
-  <div class="offcanvas-body">
+  <div class="offcanvas-body position-relative">
 
     <ul id="cartItems" class="list-group mb-3"></ul>
 
     <h5>Total: $<span id="cartTotal">0.00</span></h5>
 
-    <button class="btn btn-success w-100 mt-3">Finalizar compra</button>
+    <!-- BOTÓN FIJO ABAJO Y DORADO -->
+    <button class="btn btn-dorado w-100 footer-fixed">
+      Finalizar compra
+    </button>
+
   </div>
 </div>
-
 
 
 <!-- ======================= SCRIPT DEL CARRITO ======================= -->
@@ -158,6 +319,87 @@ function updateCartUI() {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<section class="container my-5">
+  <h2 class="mb-4">🛒 Tu carrito</h2>
+
+  <div id="cart-items"></div>
+
+  <h4 class="mt-4">
+    Total: $<span id="cart-total">0</span>
+  </h4>
+
+  <button id="clear-cart" class="btn btn-danger mt-3">
+    Vaciar carrito
+  </button>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const cartItems = document.getElementById("cartItems");
+  const cartTotal = document.getElementById("cartTotal");
+  const cartCount = document.getElementById("cartCount");
+
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  // 👉 AGREGAR PRODUCTO
+  document.addEventListener("click", e => {
+    if (e.target.classList.contains("btn-add")) {
+      const card = e.target.closest(".product-item");
+      const id = card.dataset.id;
+      const name = card.dataset.name;
+      const price = parseFloat(card.dataset.price);
+
+      const existing = cart.find(p => p.id === id);
+
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ id, name, price, quantity: 1 });
+      }
+
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+  });
+
+  // 👉 RENDER CARRITO LATERAL
+  function renderCart() {
+    cartItems.innerHTML = "";
+    let total = 0;
+    let count = 0;
+
+    if (cart.length === 0) {
+      cartItems.innerHTML = `<li class="list-group-item text-center">Carrito vacío 🛒</li>`;
+    }
+
+    cart.forEach((item, index) => {
+      total += item.price * item.quantity;
+      count += item.quantity;
+
+      const li = document.createElement("li");
+      li.className = "list-group-item d-flex justify-content-between align-items-center";
+
+      li.innerHTML = `
+        <div>
+          <strong>${item.name}</strong><br>
+          <small>Cantidad: ${item.quantity}</small>
+        </div>
+        <span>$${(item.price * item.quantity).toFixed(2)}</span>
+      `;
+
+      cartItems.appendChild(li);
+    });
+
+    cartTotal.textContent = total.toFixed(2);
+    cartCount.textContent = count;
+  }
+
+  renderCart();
+});
+</script>
+
+<script src="compras.js"></script>
 
 </body>
 </html>

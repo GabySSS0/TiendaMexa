@@ -12,7 +12,7 @@
 
     body {
       margin: 0;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background: linear-gradient(135deg, #06c5d38e, #189c9c94);
       height: 100vh;
       display: flex;
       align-items: center;
@@ -31,7 +31,7 @@
     h2 {
       text-align: center;
       margin-bottom: 20px;
-      color: #333;
+      color: #1ae7e7;
     }
 
     .input-group {
@@ -41,7 +41,7 @@
     .input-group label {
       display: block;
       margin-bottom: 5px;
-      color: #555;
+      color: #1ae7e7;
       font-size: 14px;
     }
 
@@ -55,13 +55,13 @@
     }
 
     .input-group input:focus {
-      border-color: #2575fc;
+      border-color: #cba011;
     }
 
     .btn {
       width: 100%;
       padding: 10px;
-      background: #2575fc;
+      background: #1ae7e7;
       color: white;
       border: none;
       border-radius: 8px;
@@ -91,68 +91,158 @@
     .hidden {
       display: none;
     }
+
+    .main-box{
+  background: white;
+  width: 700px;
+  height: 420px;
+  display: flex;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Mitad formulario */
+.form-side{
+  width: 50%;
+  padding: 30px;
+}
+
+/* Mitad logo */
+.logo-side{
+  width: 50%;
+  background: #fffff6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-side img{
+  max-width: 80%;
+  height: auto;
+}
+.main-box{
+  position: relative; /* necesario */
+}
+
+/* Línea divisoria */
+.main-box::after{
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  width: 1px;
+  background: rgba(0,0,0,0.15);
+}
+
+
+@media(max-width:768px){
+  .main-box{
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+  }
+
+  .form-side,
+  .logo-side{
+    width: 100%;
+  }
+
+  .logo-side{
+    padding: 20px;
+  }
+  @media(max-width:768px){
+  .main-box::after{
+    display: none;
+  }
+}
+
+}
+
   </style>
 </head>
 <body>
-  <div class="container" id="login-container">
+  <div class="main-box">
+
+  <!-- FORMULARIOS -->
+  <div class="form-side">
     <form id="login-form">
       <h2>Iniciar Sesión</h2>
+
       <div class="input-group">
-        <label for="login-email">Correo electrónico</label>
-        <input type="email" id="login-email" placeholder="usuario@ejemplo.com" required />
+        <label>Correo electrónico</label>
+        <input type="email" required>
       </div>
+
       <div class="input-group">
-        <label for="login-password">Contraseña</label>
-        <input type="password" id="login-password" placeholder="••••••••" required />
+        <label>Contraseña</label>
+        <input type="password" required>
       </div>
-      <button type="submit" class="btn">Ingresar</button>
+
+      <button class="btn">Ingresar</button>
       <a class="toggle-link" id="show-register">¿No tienes cuenta? Crear una</a>
     </form>
 
     <form id="register-form" class="hidden">
       <h2>Crear Cuenta</h2>
+
       <div class="input-group">
-        <label for="register-name">Nombre completo</label>
-        <input type="text" id="register-name" placeholder="Tu nombre" required />
+        <label>Nombre completo</label>
+        <input type="text" required>
       </div>
+
       <div class="input-group">
-        <label for="register-email">Correo electrónico</label>
-        <input type="email" id="register-email" placeholder="usuario@ejemplo.com" required />
+        <label>Correo electrónico</label>
+        <input type="email" required>
       </div>
+
       <div class="input-group">
-        <label for="register-password">Contraseña</label>
-        <input type="password" id="register-password" placeholder="••••••••" required />
+        <label>Contraseña</label>
+        <input type="password" required>
       </div>
-      <button type="submit" class="btn">Crear cuenta</button>
+
+      <button class="btn">Crear cuenta</button>
       <a class="toggle-link" id="show-login">¿Ya tienes cuenta? Inicia sesión</a>
     </form>
   </div>
 
-  <script>
-    const loginForm = document.getElementById('login-form');
-    const registerForm = document.getElementById('register-form');
-    const showRegister = document.getElementById('show-register');
-    const showLogin = document.getElementById('show-login');
 
-    showRegister.addEventListener('click', () => {
-      loginForm.classList.add('hidden');
-      registerForm.classList.remove('hidden');
-    });
+  <!-- LOGO -->
+  <div class="logo-side">
+    <img src="logo.jpg" alt="Logo">
+  </div>
 
-    showLogin.addEventListener('click', () => {
-      registerForm.classList.add('hidden');
-      loginForm.classList.remove('hidden');
-    });
+</div>
 
-    loginForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Inicio de sesión exitoso (ejemplo)');
-    });
-
-    registerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Cuenta creada exitosamente (ejemplo)');
-    });
   </script>
+
+  <script>
+  const loginForm = document.getElementById('login-form');
+  const registerForm = document.getElementById('register-form');
+  const showRegister = document.getElementById('show-register');
+  const showLogin = document.getElementById('show-login');
+
+  showRegister.onclick = () => {
+    loginForm.classList.add('hidden');
+    registerForm.classList.remove('hidden');
+  };
+
+  showLogin.onclick = () => {
+    registerForm.classList.add('hidden');
+    loginForm.classList.remove('hidden');
+  };
+
+  loginForm.onsubmit = (e) => {
+    e.preventDefault();
+    alert('Inicio de sesión exitoso (ejemplo)');
+  };
+
+  registerForm.onsubmit = (e) => {
+    e.preventDefault();
+    alert('Cuenta creada exitosamente (ejemplo)');
+  };
+</script>
+
 </body>
 </html>

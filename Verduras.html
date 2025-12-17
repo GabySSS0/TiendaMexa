@@ -3,56 +3,289 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Verduras - Tienda Mexa</title>
+
+  <title>Dulces - Tienda Mexa</title>
+
+  <!-- CSS externo -->
   <link href="assets/css/styles.css" rel="stylesheet">
+  
+
+
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-.card-img-top {
+  <!-- Fuente Great Vibes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+ <style>
+    :root {
+      --azul-rey: #0033A0;
+      --azul-maya: #73C2FB;
+      --fondo-header: #d9e7ff;
+      --dorado: #DAA520;
+      --dorado-oscuro: #8B6914;
+    }
+
+    .btn-dorado { background: var(--dorado); color:white; font-weight:700; border-radius:10px; }
+    .btn-dorado:hover { background:var(--dorado-oscuro); }
+
+    .brand-title {
+      color: var(--dorado);
+      font-weight: 800;
+      font-size: 2.8rem;
+      letter-spacing: 0.5px;
+      font-family: 'Great Vibes', cursive;
+      text-shadow: 0 0 10px #e8c56c, 0 0 15px #e8c56c, 0 0 20px #e8c56c, 0 0 40px #d4a73c;
+    }
+
+    .search-input {
+      background: #fff;
+      border-radius: 20px;
+    }
+
+    .btn-primary-custom {
+      background: var(--dorado);
+      border-color: var(--dorado);
+      color: #fff;
+    }
+
+    .card-img-top {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .mobile-header { display: none; }
+
+    .offcanvas-menu a {
+      color: var(--dorado);
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .mobile-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      color: var(--dorado);
+      margin-left: 10px;
+    }
+
+    .mobile-logo { height: 50px; }
+
+    .offcanvas-half { width: 50% !important; }
+
+    .brand-title-mobile {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: var(--dorado);
+    }
+/* CONTENEDOR DE IMAGEN */
+.product-img-wrapper {
   width: 100%;
   height: 180px;
-  object-fit: cover;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
 }
-</style>
+
+/* IMAGEN DEL PRODUCTO */
+.product-img-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+
+    .floating-video {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: #000;
+}
+
+.floating-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.floating-video {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 9999;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  background: #000;
+}
+
+/* VIDEO */
+.floating-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* BOTÓN CERRAR */
+.close-video {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  cursor: pointer;
+  z-index: 10000;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.floating-video:hover .close-video {
+  opacity: 1;
+}
+
+
+
+.close-video:hover {
+  background: #d32f2f;
  
+}
+
+
+
+  </style>
 </head>
-<header class="py-2 px-3 d-flex align-items-center justify-content-between" style="background:#d7e6ff;">
-      
-      <!-- LOGO -->
-      <div class="d-flex align-items-center">
-        <img src="logo.jpg" alt="Logo" width="50" height="50" class="me-2">
-        <div class="text-center">
-          <h4 class="m-0 fw-bold">Tienda Mexa</h4>
-          <small class="text-primary">Lo que necesitas, siempre contigo</small>
-        </div>
-      </div>
 
-      <!-- ENLACES DE NAVEGACIÓN -->
-      <div class="d-flex align-items-center gap-4">
+<!-- menu -->
+<!-- =============== HEADER ESCRITORIO =============== -->
+<header class="py-2 px-3 d-none d-md-block" style="background:#d7e6ff;">
 
-        <!-- 🔵 Inicio de sesión -->
-        <a href="login.html" class="text-primary fw-semibold">Inicio de sesión</a>
+  <div class="container d-flex align-items-center justify-content-between">
 
-        <!-- 🔵 NUEVO BOTÓN: INICIO -->
-        <!-- Cambia el archivo por el nombre de tu página principal -->
-        <a href="index.html" class="text-primary fw-semibold">
-          <!-- ← AQUÍ CAMBIA EL NOMBRE DE TU PÁGINA PRINCIPAL -->
-          Inicio
-        </a>
+    <!-- LOGO -->
+    <a href="index.html">
+      <img id="logoImg" src="logo.jpg" alt="Logo" style="height:80px;">
+    </a>
 
-        <!-- Buscador -->
-        <input type="text" placeholder="Buscar productos..." class="form-control-sm rounded-pill px-3">
+    <!-- TÍTULO -->
+    <div class="flex-fill text-center">
+      <div class="brand-title">Tienda Mexa</div>
+    </div>
 
-        <button class="btn btn-outline-secondary btn-sm">Buscar</button>
+    <!-- MENÚ + BUSCADOR + ICONOS -->
+    <div class="d-flex align-items-center gap-3">
 
-        <button class="btn btn-outline-secondary btn-sm">
-          🛒
+      <a href="inicioS.html"
+         style="color: var(--dorado); text-decoration: underline; font-weight: 700;">
+         Inicio de sesión
+      </a>
+
+      <a href="index.html"
+         style="color: var(--dorado); text-decoration: underline; font-weight: 700;">
+         Inicio
+      </a>
+
+      <form id="searchForm" class="d-flex align-items-center" onsubmit="return false;">
+        <input class="form-control search-input form-control-sm"
+               type="search"
+               placeholder="Buscar productos..."
+               style="width:180px;">
+        <button type="button"
+                style="background:none; border:none; font-size:18px; color:#d4af37;">
+          🔍
         </button>
+      </form>
 
-        
-      </div>
-  </header>
+      <a href="compras.html"
+         style="color: var(--dorado); text-decoration: underline; font-size:1.3rem;">
+         🛒
+      </a>
+
+    </div>
+  </div>
+
+</header>
+<!-- ================== MENU MÓVIL (OFFCANVAS) ================== -->
+<div class="offcanvas offcanvas-start offcanvas-half" tabindex="-1" id="menuMovil">
+
+  <div class="offcanvas-header">
+    <h5 class="mobile-title" style="color: var(--dorado);">Tienda Mexa</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <a href="inicioS.html" class="d-block mb-3"
+       style="color: var(--dorado); font-weight:700; font-size:1.1rem;">
+       👤 Iniciar sesión
+    </a>
+
+    <a href="compras.html" class="d-block mb-3"
+       style="color: var(--dorado); font-weight:700; font-size:1.1rem;">
+       🛒 Carrito
+    </a>
+
+  </div>
+</div>
+
+<!-- =============== FIN HEADER ESCRITORIO =============== -->
+<!-- =============== HEADER MÓVIL =============== -->
+<header class="d-md-none py-2 px-2" style="background:#d7e6ff;">
+
+  <div class="d-flex align-items-center justify-content-between">
+
+    <!-- Hamburguesa -->
+    <button class="btn" type="button" data-bs-toggle="offcanvas"
+      data-bs-target="#menuMovil" style="font-size:1.8rem;">☰</button>
+
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Logo" style="height:55px;">
+
+    <!-- Título -->
+    <span class="mobile-title"
+          style="font-size:1.3rem; color:var(--dorado); font-weight:700;">
+      Tienda Mexa
+    </span>
+
+    <!-- Inicio -->
+    <a href="index.html"
+       style="color: var(--dorado); text-decoration: underline; font-weight: 700;">
+       Inicio
+    </a>
+
+  </div>
+
+</header>
+<!-- =============== FIN HEADER MÓVIL =============== -->
+
+<div class="d-md-none px-2 mt-2 d-flex">
+  <input class="form-control me-2" type="search" placeholder="Buscar productos...">
+  <button class="btn" style="color:var(--dorado); font-size:1.5rem;">🔍</button>
+</div>
+
 
   <body style="background-color:#ffffff;"></body>
 
@@ -151,9 +384,157 @@
       </div>
     </div>
   </div>
+
+    <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="ver-Chile verde 1/4" data-name="Chile verde 1/4" data-price="8.00">
+      <img src="chile.png" class="card-img-top" alt="Chile verde 1/4">
+      <div class="card-body text-center">
+        <h6 class="card-title">Chile verde 1/4</h6>
+        <p class="card-text small">$8.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="ver-Cilantro manojo" data-name="Cilantro manojo" data-price="8.00">
+      <img src="cilantro.png" class="card-img-top" alt="Cilantro manojo">
+      <div class="card-body text-center">
+        <h6 class="card-title">Cilantro manojo</h6>
+        <p class="card-text small">$8.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="col-6 col-md-4">
+    <div class="card product-item p-2" data-id="ver-Jitomte verde" data-name="Jitomte verde" data-price="8.00">
+      <img src="jitomate.png" class="card-img-top" alt="Jitomte verde">
+      <div class="card-body text-center">
+        <h6 class="card-title">Jitomte verde</h6>
+        <p class="card-text small">$8.00</p>
+        <div class="d-flex justify-content-center gap-2 align-items-center">
+          <button class="btn btn-sm btn-outline-secondary btn-decrease">−</button>
+          <div class="quantity">0</div>
+          <button class="btn btn-sm btn-outline-primary btn-increase">+</button>
+          <button class="btn btn-sm btn-success ms-2 btn-add">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     </div>
   </div>
   <script src="assets/js/cart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- VIDEO / PODCAST FLOTANTE -->
+<!-- VIDEO / PODCAST FLOTANTE -->
+<div class="floating-video" id="floatingVideo">
+  <button class="close-video" onclick="closeFloatingVideo()">×</button>
+
+  <video controls>
+    <source src="verduras.mp4" type="video/mp4">
+    Tu navegador no soporta video.
+  </video>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function closeFloatingVideo() {
+    document.getElementById("floatingVideo").style.display = "none";
+  }
+</script>
+<script>
+function showToast(message) {
+  const toast = document.createElement("div");
+  toast.textContent = message;
+
+  toast.style.position = "fixed";
+  toast.style.bottom = "20px";
+  toast.style.left = "50%";
+  toast.style.transform = "translateX(-50%)";
+  toast.style.background = "#28a745";
+  toast.style.color = "#fff";
+  toast.style.padding = "12px 20px";
+  toast.style.borderRadius = "25px";
+  toast.style.fontWeight = "600";
+  toast.style.zIndex = "11000"; // más alto que offcanvas
+  toast.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+  toast.style.opacity = "0";
+  toast.style.transition = "opacity 0.4s ease";
+
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => toast.style.opacity = "1");
+
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    setTimeout(() => toast.remove(), 400);
+  }, 1800);
+}
+
+document.addEventListener("click", e => {
+
+  /* ➕ */
+  if (e.target.classList.contains("btn-increase")) {
+    const qty = e.target.previousElementSibling;
+    qty.textContent = parseInt(qty.textContent) + 1;
+  }
+
+  /* ➖ */
+  if (e.target.classList.contains("btn-decrease")) {
+    const qty = e.target.nextElementSibling;
+    const value = parseInt(qty.textContent);
+    if (value > 0) qty.textContent = value - 1;
+  }
+
+  /* 🛒 AGREGAR */
+  if (e.target.classList.contains("btn-add")) {
+
+    const card = e.target.closest(".product-item");
+    const quantity = parseInt(card.querySelector(".quantity").textContent);
+
+    if (quantity === 0) {
+      showToast("Selecciona al menos 1 producto ⚠️");
+      return;
+    }
+
+    const product = {
+      id: card.dataset.id,
+      name: card.dataset.name,
+      price: parseFloat(card.dataset.price),
+      img: card.dataset.img,
+      quantity
+    };
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const existing = cart.find(p => p.id === product.id);
+    if (existing) {
+      existing.quantity += quantity;
+    } else {
+      cart.push(product);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    card.querySelector(".quantity").textContent = "0";
+
+    showToast("Producto agregado al carrito 🛒");
+  }
+});
+</script>
+
 </body>
 </html>

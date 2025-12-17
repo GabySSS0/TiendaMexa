@@ -7,12 +7,15 @@
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --azul-rey: #0033A0;   /* títulos */
       --azul-maya: #73C2FB;  /* texto / secundarios */
       --fondo-header: #d9e7ff;
+      --negro:#000000;
+    
   
   --dorado: #DAA520;   /* NUEVO COLOR */
   --dorado-oscuro: #8B6914; /* Hover */
@@ -54,7 +57,7 @@
 
     /* Site map dropdown styling */
     .sitemap-list a {
-      color: var(--azul-rey);
+      color: var(--dorado);
       text-decoration: none;
     }
 
@@ -73,6 +76,265 @@
       color: var(--azul-maya);
       font-size: 1.05rem;
     }
+/* Contenedor general del bloque video + flechas */
+.video-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; /* espacio real entre flechas y video */
+  width: 100%;
+}
+
+/* Tamaño del video */
+.video-container video {
+  width: 60%;        /* ⬅️ lo hacemos más pequeño */
+  max-width: 700px;  /* ⬅️ límite más controlado */
+  border-radius: 15px;
+}
+
+/* Flechas */
+.video-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0; /* ⬅️ evita que se monten */
+}
+
+/* Icono dorado tipo carrusel */
+.carousel-arrow {
+  font-size: 42px;
+  color: #d4af37;
+  font-weight: bold;
+}
+
+/* Hover elegante */
+.video-arrow:hover .carousel-arrow {
+  color: #b8962e;
+}
+
+
+/* Contenedor general */
+.video-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Video */
+.video-container video {
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Flechas */
+.video-arrow {
+  position: relative; /* ya NO absolute */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Flecha izquierda */
+.carousel-control-prev.video-arrow {
+  margin-right: 10px;
+}
+
+/* Flecha derecha */
+.carousel-control-next.video-arrow {
+  margin-left: 10px;
+}
+
+/* Icono flecha dorado */
+.carousel-arrow {
+  font-size: 38px;
+  color: #d4af37; /* dorado */
+  font-weight: bold;
+}
+
+/* Hover */
+.video-arrow:hover .carousel-arrow {
+  color: #b8962e;
+}
+ /* CONTENEDOR DE LA ANIMACIÓN */
+#intro-animation {
+  width: 100%;
+  height: 400px; /* altura del carrusel */
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* VIDEO */
+
+#intro-animation video {
+  width: 70%;
+  height: 80%;
+  object-fit: cover;
+  image-rendering: auto;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+
+/* OCULTAR CARRUSEL */
+.hidden {
+  display: none;
+}
+
+/* ============================= */
+/* TARJETAS DE PRODUCTOS */
+/* ============================= */
+.product-card {
+  width: 220px;
+  height: 360px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  /* SOMBRA BASE DORADA */
+  box-shadow:
+    0 8px 20px rgba(24, 146, 216, 0.527),
+    0 0 15px rgba(10, 53, 173, 0.671);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* ✨ GLOW AL PASAR EL MOUSE */
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 15px 35px rgba(12, 173, 179, 0.781),
+    0 0 30px rgba(47, 211, 233, 0.753);
+}
+
+/* ============================= */
+/* TÍTULO ARRIBA */
+/* ============================= */
+.product-card h5 {
+  margin-bottom: 40px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ============================= */
+/* IMAGEN MÁS LARGA SIN DEFORMAR */
+/* ============================= */
+.product-card img {
+  width: 1000%;
+  height: 800px;
+  object-fit: contain;   /* 🔥 CLAVE */
+  object-position: center;
+  margin: 20px 0;
+  border-radius: 50px;
+}
+
+
+
+/* ============================= */
+/* BOTÓN ABAJO SIEMPRE */
+/* ============================= */
+.product-card .btn {
+  margin-top: auto;              /* Empuja el botón abajo */
+  border-radius: 25px;
+  padding: 6px 22px;
+}
+
+/* ============================= */
+/* FLECHAS GRANDES Y BONITAS */
+/* ============================= */
+.carousel-arrow {
+  font-size: 60px;
+  color: var(--dorado);
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  transform: scale(1.2);
+}
+
+/* ============================= */
+/* ANIMACIÓN SUAVE */
+/* ============================= */
+.carousel-item {
+  transition: transform 0.8s ease-in-out;
+}
+
+/* ============================= */
+/* RESPONSIVE TABLET */
+/* ============================= */
+@media (max-width: 768px) {
+  .product-card {
+    width: 170px;
+    height: 310px;
+  }
+
+  .product-card img {
+    height: 180px;
+  }
+
+  .carousel-arrow {
+    font-size: 45px;
+  }
+}
+
+/* ============================= */
+/* RESPONSIVE CELULAR */
+/* ============================= */
+@media (max-width: 480px) {
+  .product-card {
+    width: 150px;
+    height: 280px;
+  }
+
+  .product-card img {
+    height: 160px;
+  }
+
+  .carousel-arrow {
+    display: none;
+  }
+}
+
+
+/* ===== FLECHAS CARRUSEL LIMPIAS ===== */
+.carousel-control-prev,
+.carousel-control-next{
+  opacity: 1 !important;
+  width: 10%;
+  z-index: 20;
+}
+
+/* Flecha sola */
+.carousel-arrow{
+  font-size: 3rem;
+  color: var(--dorado);
+  font-weight: bold;
+  background: none;     /* ❌ sin círculo */
+  padding: 0;           /* ❌ sin relleno */
+  border-radius: 0;     /* ❌ sin forma */
+}
+
+/* Móvil */
+@media (max-width: 768px){
+  .carousel-arrow{
+    font-size: 3.2rem;
+  }
+}
+
+
+   
+
 
     /* Assistant chat */
     .assistant {
@@ -96,16 +358,225 @@
     .assistant .msg-user { text-align:right; font-weight:600; color: var(--azul-rey); }
     .assistant .msg-bot { text-align:left; color:#333; }
 
+#bigLogo {
+  width: 100%;
+  max-height: 250px;     /* controla el alto */
+  object-fit: contain;  /* NO se deforma */
+  border-radius: 40px;
+}
+.who-section {
+  background: #e9f5ff;
+  border-radius: 25px;
+  padding: 25px;
+}
+
+.who-section h2 {
+  margin: 0;
+  color: var(--azul-rey);
+}
+
+.who-section h5 {
+  margin: 0 0 8px 0;
+  color: var(--negro);
+}
+.who-text {
+  background: #ffffff;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0,0,0,0.08);
+  font-size: 1.05em;
+  line-height: 1.6;
+}
+
+
     /* "Quiénes somos" */
     .who-section h2{ color: var(--azul-rey); }
-    .who-section h5{ color: var(--azul-maya); }
+    .who-section h5{ color: var(--dorado); }
 
-    /* Footer */
+#quienes-somos h2 {
+  margin-bottom: 1.6;
+}
+
+#quienes-somos h5 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+  font-weight: 200;
+}
+#quienes-somos p {
+  color: #000;
+}
+
+    
+
+    @media (max-width: 767px){
+      .brand-title { font-size: 1.1rem; text-align:center; }
+      .header-center { order: 3; width: 100%; margin-top: 0.5rem; }
+      .header-left, .header-right { width: auto; }
+    }
+    /* 🔹 RESPONSIVE HEADER PARA CELULAR */
+    /* === MENÚ HAMBURGUESA MÓVIL === */
+.mobile-header {
+  display: none;
+}
+
+.offcanvas-menu a {
+  color: var(--dorado);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+/* Desktop */
+@media (min-width: 992px) {
+  .desktop-header {
+    display: flex !important;
+  }
+  .mobile-header {
+    display: none !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 991px) {
+  .desktop-header {
+    display: none !important;
+  }
+  .mobile-header {
+    display: flex !important;
+    align-items: center;
+    padding: 10px;
+    background: var(--fondo-header);
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+  }
+
+  .mobile-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.8rem;
+    color: var(--dorado);
+    margin-left: 10px;
+  }
+
+  .mobile-logo {
+    height: 50px;
+  }
+}
+.offcanvas-half {
+  width: 50% !important;
+}
+
+.brand-title-mobile {
+  font-family: 'Great Vibes', cursive;
+  font-size: 32px;
+  color: var(--dorado);
+}
+        /* PRODUCT CARDS — Fix imágenes que se salen */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 100px;
+}
+
+/* Mantener todas las tarjetas uniformes */
+.product-card {
+    width: 150px;
+    text-align: center;
+}
+
+/* Alinear bien en móvil */
+@media (max-width: 576px) {
+    .product-card {
+        width: 48%;  /* 2 por fila */
+    }
+    #productCarousel .d-flex {
+        gap: 10px !important;
+    }
+}
+/* PRODUCT CARDS — Fix imágenes que se salen */
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Mantener todas las tarjetas uniformes */
+.product-card {
+    width: 150px;
+    text-align: center;
+}
+
+/* Alinear bien en móvil */
+@media (max-width: 576px) {
+    .product-card {
+        width: 48%;  /* 2 por fila */
+    }
+    #productCarousel .d-flex {
+        gap: 10px !important;
+    }
+}
+
+/* ============================= */
+/* FIX DEFINITIVO IMÁGENES CARRUSEL */
+/* ============================= */
+
+.product-card {
+  width: 220px;
+  height: 360px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* IMAGEN CENTRADA, SIN DEFORMAR */
+
+
+/* TÍTULO */
+.product-card h5 {
+  text-align: center;
+  font-weight: 600;
+}
+
+/* BOTÓN ABAJO */
+.product-card .btn {
+  margin-top: auto;
+  border-radius: 25px;
+  padding: 6px 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .product-card {
+    width: 180px;
+    height: 320px;
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    width: 150px;
+    height: 300px;
+  }
+
+  .product-card img {
+    height: 600px;
+  }
+}
+
+/* Footer */
     footer {
-      background: #f8fbff;
+      background: #d9e7ff;
       padding: 2rem 1rem;
       margin-top: 2rem;
-      color: var(--azul-maya);
+      color: var(--negro);
     }
     footer h5 { color: var(--azul-rey); }
 
@@ -113,118 +584,174 @@
     .product-card { border: 1px solid rgba(0,0,0,0.06); border-radius: 10px; padding: 0.7rem; background: #fff; }
     .product-card img { max-height: 110px; object-fit: contain; }
 
-    @media (max-width: 767px){
-      .brand-title { font-size: 1.1rem; text-align:center; }
-      .header-center { order: 3; width: 100%; margin-top: 0.5rem; }
-      .header-left, .header-right { width: auto; }
-    }
   </style>
 </head>
+
 <body>
 
   <!-- ========== HEADER ========== -->
-  <header class="topbar">
-    <div class="container py-2">
-      <div class="d-flex align-items-center">
-        <!-- Logo left -->
-        <div class="header-left d-flex align-items-center">
-          <a href="#" class="me-3">
-            <!-- Placeholder logo -->
-             <a href="logo.jpg">
-  <img id="logoImg" src="logo.jpg" alt="Logo" style="height:80px;">
-</a>
-            
-        </div>
+  <!-- HEADER COMPLETO CORREGIDO -->
+<header class="topbar">
 
-        <!-- Title center -->
-        <div class="flex-fill text-center header-center">
-        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <div class="container py-2 d-none d-md-flex align-items-center">
 
-
-          <div class="brand-title">Tienda Mexa</div>
-        </div>
-
-        <!-- Buttons right -->
-        <div class="header-right d-flex align-items-center gap-2">
-         <a href="inicioS.html" 
-   style="color: var(--dorado); text-decoration: underline; font-weight: 600; cursor: pointer;">
-   Inicio de sesión
-</a>
-
-
-      
-  <!-- Icono de lupa dentro del input -->
-<form id="searchForm" class="d-flex align-items-center" onsubmit="return false;">
-  <input id="searchInput"
-         class="form-control search-input form-control-sm me-0"
-         type="search"
-         placeholder="Buscar productos..."
-         aria-label="Buscar"
-         style="width:180px;">
-
-  <button id="searchBtn"
-          type="button"
-          style="
-          color: var(--dorado); text-decoration: underline; font-weight: 600; cursor: pointer;
-            background:none;
-            border:none;
-            font-size:18px;
-            cursor:pointer;
-            color:#d4af37; /* DORADO */
-          ">
-      🔍
-  </button>
-</form>
-
-
-          <!-- Cart -->
-          <a href="compras.html"
-   style="color: var(--dorado); text-decoration: underline; font-size:1.1rem; cursor:pointer;">
-   🛒 
-</a>
-
-
-          <!-- Site map dropdown -->
-          <div class="dropdown">
-  <a class="dropdown-toggle"
-     id="sitemapBtn"
-     data-bs-toggle="dropdown"
-     aria-expanded="false"
-     style="color: var(--dorado); text-decoration: underline; font-weight:600; cursor:pointer;">
-     Mapa del sitio
-  </a>
-            <ul class="dropdown-menu dropdown-menu-end p-3 sitemap-list" aria-labelledby="sitemapBtn" style="min-width:220px;">
-              <li><a class="dropdown-item" href="#videoWelcome">Video de bienvenida</a></li>
-              <li><a class="dropdown-item" href="#productos">Carrusel de productos</a></li>
-              <li><a class="dropdown-item" href="#slogan">Slogan & Asistente</a></li>
-              <li><a class="dropdown-item" href="#¿Quienes-somos?">¿Quiénes somos?</a></li>
-              <li><a class="dropdown-item" href="#localizacion">Localización</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#footer">Derechos reservados</a></li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
+    <!-- Logo left -->
+    <div class="header-left d-flex align-items-center">
+      <a href="index.html" class="me-3">
+        <img id="logoImg" src="logo.jpg" alt="Logo" style="height:100px;">
+      </a>
     </div>
-  </header>
 
-  <!-- ========== MAIN CONTENT ========== -->
-  <main class="container my-4">
+    <!-- Title center -->
+    <div class="flex-fill text-center header-center">
+      <div class="brand-title">Tienda Mexa</div>
+    </div>
 
-    <!-- VIDEO DE BIENVENIDA -->
-   <section id="videoWelcome" class="mb-5">
+    <!-- Buttons right -->
+    <div class="header-right d-flex align-items-center gap-2">
+
+      <a href="inicioS.html"
+         style="color: var(--dorado); text-decoration: underline; font-weight: 600;">
+         Inicio de sesión
+      </a>
+
+      <!-- Search -->
+      <form id="searchForm" class="d-flex align-items-center" onsubmit="return false;">
+        <input id="searchInput" class="form-control form-control-sm me-0"
+               type="search" placeholder="Buscar productos..." style="width:180px;">
+        <button id="searchBtn" type="button"
+                style="background:none; border:none; font-size:18px; color:#d4af37;">
+          🔍
+        </button>
+      </form>
+
+      <!-- Cart -->
+      <a href="compras.html"
+         style="color: var(--dorado); text-decoration: underline; font-size:1.1rem;">
+         🛒
+      </a>
+
+      <!-- Site map dropdown -->
+      <div class="dropdown">
+        <a class="dropdown-toggle" id="sitemapBtn" data-bs-toggle="dropdown"
+           style="color: var(--dorado); text-decoration: underline; font-weight:600;">
+          Mapa del sitio
+        </a>
+
+        <ul class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="sitemapBtn">
+          <li><a class="dropdown-item" href="#videoWelcome">Video/ podcast</a></li>
+          <li><a class="dropdown-item" href="#productos">Carrusel de productos</a></li>
+          <li><a class="dropdown-item" href="#slogan">Slogan & Asistente</a></li>
+          <li><a class="dropdown-item" href="#quienes-somos">¿Quiénes somos?</a></li>
+          <li><a class="dropdown-item" href="#localizacion">Localización</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#footer">Derechos reservados</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+  
+  
+
+  <!-- ================== HEADER MÓVIL ================== -->
+  <!-- MÓVIL HEADER: ☰ | Logo | Tienda Mexa | Mapa -->
+<!-- ================== HEADER MÓVIL ================== -->
+  <div class="w-100 d-md-none d-flex align-items-center justify-content-between px-2">
+
+    <!-- Hamburguesa -->
+    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuMovil"
+      style="font-size:1.8rem;">☰</button>
+
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Logo" style="height:55px;">
+
+    <!-- Título -->
+    <span class="mobile-title" style="font-size:1.3rem; color:var(--dorado); font-weight:700;">
+      Tienda Mexa
+    </span>
+
+    <!-- Dropdown Mapa -->
+    <div class="dropdown">
+      <button class="btn dropdown-toggle" data-bs-toggle="dropdown"
+        style="color:var(--dorado); font-weight:600;">
+        Mapa del sitio
+      </button>
+
+      <ul class="dropdown-menu p-3 sitemap-list" style="min-width:200px;">
+        <li><a class="dropdown-item" href="#videoWelcome">Video de bienvenida</a></li>
+        <li><a class="dropdown-item" href="#productos">Carrusel de productos</a></li>
+        <li><a class="dropdown-item" href="#slogan">Slogan & Asistente</a></li>
+        <li><a class="dropdown-item" href="#quienes-somos">¿Quiénes somos?</a></li>
+        <li><a class="dropdown-item" href="#localizacion">Localización</a></li>
+        <li><hr></li>
+        <li><a class="dropdown-item" href="#footer">Derechos reservados</a></li>
+      </ul>
+    </div>
+
+  </div>
+</header>
+
+
+
+<!-- ================== MENU MÓVIL (OFFCANVAS MITAD) ================== -->
+<div class="offcanvas offcanvas-start offcanvas-half" tabindex="-1" id="menuMovil">
+
+  <div class="offcanvas-header">
+    <h5 style="color: var(--dorado);">Tienda Mexa</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+
+    <!-- Solo dos botones -->
+    <a href="inicioS.html" class="d-block mb-2">Inicio de sesión</a>
+    <a href="compras.html" class="d-block mb-2">🛒 Carrito</a>
+
+  </div>
+</div>
+
+
+<!-- ================== BUSCADOR MÓVIL ABAJO DEL HEADER ================== -->
+<div class="d-md-none px-2 mt-2 d-flex">
+  <input class="form-control me-2" type="search" placeholder="Buscar productos...">
+  <button class="btn" style="color:var(--dorado); font-size:1.5rem;">🔍</button>
+</div>
+
+
+
+  <!-- ========== MAIN CONTENT video ========== -->
+ <main class="container my-4">
+
+  <!-- VIDEO DE BIENVENIDA -->
+  <section id="videoWelcome" class="mb-5">
     <h3 class="titulo-brillante">Bienvenidos</h3>
 
-    <div class="ratio ratio-16x9">
-        <!-- tu video aquí -->
-         <!-- Replace src with your YouTube embed or local mp4 -->
-        <iframe src="Bienvenidoss.mp4" title="Video de bienvenida" allowfullscreen></iframe>
+    <div class="video-container">
+
+      <!-- Flecha izquierda -->
+      <button class="video-arrow" type="button" onclick="prevVideo()">
+        <span class="carousel-arrow">&#10094;</span>
+      </button>
+
+      <!-- Video -->
+      <div class="video-wrapper">
+        <video id="welcomeVideo" autoplay muted playsinline controls>
+          <source src="Bienvenidoss.mp4" type="video/mp4">
+        </video>
       </div>
-    </section>
+
+      <!-- Flecha derecha -->
+      <button class="video-arrow" type="button" onclick="nextVideo()">
+        <span class="carousel-arrow">&#10095;</span>
+      </button>
 
     </div>
-</section>
+  </section>
+
+</main>
+
 
 <style>
 .titulo-brillante {
@@ -238,169 +765,107 @@
 </style>
 
 
+  <!-- ANIMACIÓN DE INICIO -->
+<section id="productos" class="mb-5">
+
+  <!-- ANIMACIÓN -->
+  <div id="intro-animation">
+    <video id="introVideo" autoplay muted playsinline>
+      <source src="videoosmara.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- CARRUSEL -->
+  <div id="carousel-container" class="hidden">
+    <!-- 🔽 AQUÍ VA TODO TU CARRUSEL TAL CUAL -->
+     <section id="productos" class="mb-5">
+  <h3 class="text-center mb-4" style="color:var(--dorado); font-size:2rem;">
+    Productos
+  </h3>
+
+  <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+          <div class="product-card text-center">
+            <h5>Refrescos</h5>
+            <img src="refrescos.jpg" alt="Refrescos">
         
-
-    <!-- CARRUSEL + PRODUCTOS -->
-    <section id="productos" class="mb-5">
-      <h3 style="color:var(--dorado); text-align: center; ">Productos</h3>
-
-      <!-- Bootstrap carousel with sample slides -->
-      <div id="productCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-              <!-- Each "card" is a product -->
-              <div class="product-card text-center" style="width:150px; ">
-                <img src="refrescos.jpg" alt="Refrescos">
-                <div   class="mt-2">Refrescos</div>
-                <a href="refrescos.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-
-              <div class="product-card text-center" style="width:150px;">
-                <img src="frituras.jpg" alt="Fituras">
-                <div class="mt-2">Frituras</div>
-                <a href="frituras.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-
-              <div class="product-card text-center" style="width:150px;">
-                <img src="verduras.jpg" alt="verduras">
-                <div class="mt-2">verduras</div>
-                <a href="Verduras.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-
-             
-              <div class="product-card text-center" style="width:150px;">
-                <img src="lacteos.jpg" alt="lacteos">
-                <div class="mt-2">Lacteos</div>
-                <a href="lacteos.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-            </div>
+            <a href="refrescos.html" class="btn btn-primary-custom">Ver</a>
           </div>
 
-          <div class="carousel-item">
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-              <div class="product-card text-center" style="width:150px;">
-                <img src="embutidos.jpg" alt="embutidos">
-                <div class="mt-2">embutidos</div>
-                <a href="embutidos.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-              <div class="product-card text-center" style="width:150px;">
-                <img src="galletas.png" alt="Galletas">
-                <div class="mt-2">Pan dulce</div>
-                <a href="galletas.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-              <div class="product-card text-center" style="width:150px;">
-                <img src="dulces.jpg" alt="dulces">
-                <div class="mt-2"> dulces</div>
-                <a href="dulces.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-              <div class="product-card text-center" style="width:150px;">
-                <img src="limpieza.jpg" alt="Productos de limpieza">
-                <div class="mt-2">limpieza</div>
-                <a href="limpieza.html" class="btn btn-sm btn-primary-custom mt-2">Ver</a>
-              </div>
-            </div>
+          <div class="product-card text-center">
+             <h5>Frituras</h5>
+            <img src="frituras.jpg" alt="Frituras">
+           
+            <a href="frituras.html" class="btn btn-primary-custom">Ver</a>
+          </div>
+
+          <div class="product-card text-center">
+            <h5>Verduras</h5>
+            <img src="verduras.jpg" alt="Verduras">
+            
+            <a href="Verduras.html" class="btn btn-primary-custom">Ver</a>
+          </div>
+
+          <div class="product-card text-center">
+              <h5>Lácteos</h5>
+            <img src="lacteos.jpg" alt="Lácteos">
+          
+            <a href="lacteos.html" class="btn btn-primary-custom">Ver</a>
           </div>
         </div>
-
-       <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
-  <span class="carousel-arrow">&#10094;</span>  <!-- Flecha izquierda -->
-</button>
-
-<button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
-  <span class="carousel-arrow">&#10095;</span>  <!-- Flecha derecha -->
-</button>
-
-<style>
-.carousel-arrow {
-    font-size: 40px;
-    color: var(--dorado);      /* tu color dorado */
-    font-weight: bold;
-}
-
-/* Ocultar el fondo que pone Bootstrap */
-.carousel-control-prev,
-.carousel-control-next {
-    background: none !important;
-    border: none !important;
-    width: 5%;                 /* que no ocupe mucho espacio */
-}
-
-/* Quitar el icono por defecto */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    display: none;
-}
-</style>
-
       </div>
 
-      <!-- GRID de productos (filtrable con búsqueda) -->
-      <div class="mb-3">
-        <small class="text-muted">Resultados de búsqueda (si no se usa la búsqueda aparecerán todos):</small>
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center gap-4 flex-wrap">
+          <div class="product-card text-center">
+            <h5>Embutidos</h5>
+            <img src="embutidos.jpg" alt="Embutidos">
+            
+            <a href="embutidos.html" class="btn btn-primary-custom">Ver</a>
+          </div>
+
+          <div class="product-card text-center">
+             <h5>Pan dulce</h5>
+            <img src="galletas.png" alt="Pan dulce">
+           
+            <a href="galletas.html" class="btn btn-primary-custom">Ver</a>
+          </div>
+
+          <div class="product-card text-center">
+            <h5>Dulces</h5>
+            <img src="dulces.jpg" alt="Dulces">
+            
+            <a href="dulces.html" class="btn btn-primary-custom">Ver</a>
+          </div>
+
+          <div class="product-card text-center">
+            <h5>Limpieza</h5>
+            <img src="limpieza.jpg" alt="Limpieza">
+            
+            <a href="limpieza.html" class="btn btn-primary-custom">Ver</a>
+          </div>
+        </div>
       </div>
 
-      <div id="productGrid" class="row g-3">
-        <!-- Repeat product cards, ensure each has data-name attribute for filtering -->
+    </div>
 
-        <div class="col-6 col-md-3">
-          <div class="product-card h-100" data-name="Leche Entera">
-            <img src="https://via.placeholder.com/220x120?text=Leche" class="w-100" alt="Leche">
-            <h6 class="mt-2">Leche Entera</h6>
-            <p class="mb-1 small">1L</p>
-            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
-          </div>
-        </div>
+    <!-- FLECHAS -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+      <span class="carousel-arrow">&#10094;</span>
+    </button>
 
-        <div class="col-6 col-md-3">
-          <div class="product-card h-100" data-name="Galletas Choco">
-            <img src="https://via.placeholder.com/220x120?text=Galletas" class="w-100" alt="Galletas">
-            <h6 class="mt-2">Galletas Choco</h6>
-            <p class="mb-1 small">Paquete</p>
-            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
-          </div>
-        </div>
+    <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+      <span class="carousel-arrow">&#10095;</span>
+    </button>
+  </div>
+</section>
 
-        <div class="col-6 col-md-3">
-          <div class="product-card h-100" data-name="Refresco Cola">
-            <img src="https://via.placeholder.com/220x120?text=Refresco" class="w-100" alt="Refresco">
-            <h6 class="mt-2">Refresco Cola</h6>
-            <p class="mb-1 small">600 ml</p>
-            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="product-card h-100" data-name="Jabón en barra">
-            <img src="https://via.placeholder.com/220x120?text=Jabon" class="w-100" alt="Jabon">
-            <h6 class="mt-2">Jabón en barra</h6>
-            <p class="mb-1 small">Pack 3</p>
-            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
-          </div>
-        </div>
-
-        <!-- más productos -->
-        <div class="col-6 col-md-3">
-          <div class="product-card h-100" data-name="Pasta dental">
-            <img src="https://via.placeholder.com/220x120?text=Pasta" class="w-100" alt="Pasta">
-            <h6 class="mt-2">Pasta dental</h6>
-            <p class="mb-1 small">90 g</p>
-            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
-          </div>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <div class="product-card h-100" data-name="Detergente">
-            <img src="https://via.placeholder.com/220x120?text=Detergente" class="w-100" alt="Detergente">
-            <h6 class="mt-2">Detergente</h6>
-            <p class="mb-1 small">1 kg</p>
-            <a href="#" class="btn btn-sm btn-primary-custom">Ver producto</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+     
     <!-- SLOGAN + ASSISTANT -->
     <section id="slogan" class="mb-5">
       <div class="row align-items-center">
@@ -428,24 +893,45 @@
       </div>
     </section>
 
+  </div>
+
+</section>
+
+
+    <!-- CARRUSEL + PRODUCTOS -->
+ 
+    
     <!-- QUIÉNES SOMOS -->
-    <section id="quienes-somos" class="who-section mb-5">
-      <h2>¿Quiénes somos?</h2>
-      <h5>Tienda Mexa</h5>
-      <div class="row align-items-center mt-3">
-        <div class="col-md-7">
-          <textarea id="whoText" class="form-control" rows="8"
-            placeholder="Escribe aquí un texto largo sobre tu tienda (mision, vision, historia, servicios...).">
-Somos una tienda de abarrotes donde le vamos a ofrecer un servicio de calidad. 
-Nuestro nombres es “Tienda Mexa” porque como somos un comercio Mexicano queremos mostrar nuestras raices al igual que los colores  que es el azul maya un color que viene de México y sacar de lo convencional.
-Y mostrar lo tradicional de lo que es una tiendita de la esquina..</textarea>
-        </div>
-        <div class="col-md-5 text-center">
-          <!-- Logo grande -->
-          <img id="bigLogo" src="logo.jpg" alt="Logo grande" class="img-fluid rounded">
-        </div>
+   <section id="quienes-somos" class="who-section mb-5">
+  <h2>¿Quiénes somos?</h2>
+  <h5>Tienda Mexa</h5>
+
+  <div class="row align-items-center mt-3">
+    <div class="col-md-7">
+      <div class="who-text p-4">
+        <p>
+          Somos una tienda de abarrotes donde le ofrecemos un servicio de calidad.
+        </p>
+        <p>
+          Nuestro nombre es <strong>Tienda Mexa</strong> porque, como somos un comercio mexicano,
+          queremos mostrar nuestras raíces, al igual que los colores que nos representan,
+          como el azul maya, un color que viene de México y rompe con lo convencional.
+        </p>
+        <p>
+          Buscamos mostrar lo tradicional de lo que es una tiendita de la esquina,
+          pero con un toque moderno.
+        </p>
       </div>
-    </section>
+    </div>
+
+    <div class="col-md-5 text-center">
+      <video id="bigLogo" class="img-fluid rounded" autoplay muted loop playsinline>
+        <source src="Video1.mp4" type="video/mp4">
+        Tu navegador no soporta video.
+      </video>
+    </div>
+  </div>
+</section>
 
 
   </main>
@@ -460,11 +946,10 @@ Y mostrar lo tradicional de lo que es una tiendita de la esquina..</textarea>
           <p>Dirección: Ecatepec. Estado de Mexico. Calle Guayaba</p>
 
           <!-- Mapa iframe: reemplaza la src por la ubicación real si deseas -->
-          <div class="ratio ratio-16x9 mb-2">
-            <iframe
-              src="https://maps.app.goo.gl/sTAGxrTBb96QfLGK6"
-              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-          </div>
+        <div class="ratio ratio-16x9 mb-2">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3160.520408723987!2d-99.06981226647844!3d19.605338786803635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1765832668312!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  
+</div>
 
           <div>
             <small>Fecha de creación  11/11/2020/ actualización 12/11/2025: <span id="fechaCreacion"></span></small>
@@ -572,5 +1057,61 @@ Y mostrar lo tradicional de lo que es una tiendita de la esquina..</textarea>
     // If you prefer they link to "producto.html" or "login.html" now, just search/replace.
 
   </script>
+ <script>
+  const intro = document.getElementById('intro-animation');
+  const video = document.getElementById('introVideo');
+  const carousel = document.getElementById('carousel-container');
+
+  // ⏱️ Forzar duración (ej. 5 segundos)
+  setTimeout(() => {
+    video.pause();
+    video.dispatchEvent(new Event('ended'));
+  }, 5000);
+
+  if (!sessionStorage.getItem('introShown')) {
+
+    video.addEventListener('ended', () => {
+      intro.style.opacity = '0';
+      setTimeout(() => {
+        intro.style.display = 'none';
+        carousel.classList.remove('hidden');
+        sessionStorage.setItem('introShown', 'true');
+      }, 600);
+    });
+
+  } else {
+    intro.style.display = 'none';
+    carousel.classList.remove('hidden');
+  }
+</script>
+
+<script>
+  const introVideos = [
+    "Bienvenidoss.mp4",   // video de bienvenida
+    "podcast1.mp4"
+  ];
+
+  let currentIntro = 0;
+  const introVideo = document.getElementById("welcomeVideo");
+
+  function loadIntro(index) {
+    introVideo.src = introVideos[index];
+    introVideo.load();
+    introVideo.play();
+  }
+
+  function nextVideo() {
+    currentIntro = (currentIntro + 1) % introVideos.length;
+    loadIntro(currentIntro);
+  }
+
+  function prevVideo() {
+    currentIntro = (currentIntro - 1 + introVideos.length) % introVideos.length;
+    loadIntro(currentIntro);
+  }
+</script>
+
+
+
 </body>
 </html>
